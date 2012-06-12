@@ -1,15 +1,17 @@
 
-"if has('win32')
+if has('win32') || has('win64')
+	set runtimepath+=C:/github/.dotfiles/vim/.vim
 	set guioptions-=T  "remove toolbar
 	set guioptions-=r  "remove right-hand scroll bar
-	set sessionoptions+=winpos
+	set sessionoptions+=resize,winpos
 	winpos 50 50
-	set lines=70
+	set lines=66
 	set columns=125
     gui
     set guifont=Lucida_Console
-"endif
+endif
 
+colors zenburn
 set hlsearch
 set showcmd " Show (partial) command in status line.
 set showmatch " Show matching brackets.
@@ -25,7 +27,7 @@ set softtabstop=4
 :nnoremap <F6> :bprevious<CR>
 :nnoremap <F7> :bnext<CR>
 
-" Smart way to move between windows
+" Window management and navigation
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
